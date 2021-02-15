@@ -6,6 +6,7 @@ os.system("clear")
 c = input("\033[1;37;40mCzy masz w komputerze/laptopie Baterię? napisz tak lub nie: \n")
 while True:
 	os.system("clear")
+	os.system("cls")
 	if c == "tak":
 		bateria = (psutil.sensors_battery().percent)
 		print("\033[1;32;40mProcent naładowania baterii: " + str(round(bateria)) + "%")
