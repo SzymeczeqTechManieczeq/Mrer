@@ -2,16 +2,20 @@ import psutil
 import time
 import os
 #did by "github.com/SzymeczeqTechManieczeq" Based on "https://github.com/Marusiella" project.
+c = input("Czy masz w komputerze/laptopie Baterię? napisz tak lub nie: ")
 while True:
 	os.system("clear")
-	bateria = (psutil.sensors_battery().percent)
-	print("Procent naładowania baterii: " + str(round(bateria)) + "%")
-	czyladuje = str(psutil.sensors_battery().power_plugged)
-	if czyladuje == "True":
-		czyladuje = "tak"
+	if c == "tak":
+		bateria = (psutil.sensors_battery().percent)
+		print("Procent naładowania baterii: " + str(round(bateria)) + "%")
+		czyladuje = str(psutil.sensors_battery().power_plugged)
+		if czyladuje == "True":
+			czyladuje = "tak"
+			print("Czy sprzęt się ładuje? " + czyladuje)
+		else:
+			czyladuje = "nie"
 	else:
-		czyladuje = "nie"
-	print("Czy sprzęt się ładuje? " + czyladuje)
+		print("Nie masz Baterii")
 	cpu = str(psutil.cpu_percent())
 	print("Procent wykorzystania procesora: " + cpu + "%")
 	ram = str(psutil.virtual_memory().percent)
