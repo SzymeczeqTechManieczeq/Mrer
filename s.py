@@ -14,6 +14,7 @@ while True:
 			print("Czy sprzęt się ładuje? " + czyladuje)
 		else:
 			czyladuje = "nie"
+			print("Czy sprzęt się ładuje? " + czyladuje)
 	else:
 		print("Nie masz Baterii")
 	cpu = str(psutil.cpu_percent())
