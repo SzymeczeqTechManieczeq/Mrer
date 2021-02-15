@@ -26,6 +26,8 @@ while True:
 		print("\033[1;32;40mNie masz Baterii")
 	ram = str(psutil.virtual_memory().percent)
 	print("\033[1;33;40mProcent wykorzystania ramu: " + ram + "%")
+	wolnyram = str(round(psutil.virtual_memory().free/1048576))
+	print("Ilość wolnego ramu: " + wolnyram + "MB")
 	cpu = str(psutil.cpu_percent())
 	print("\033[1;36;40mProcent wykorzystania procesora: " + cpu + "%")
 	watki = str(psutil.cpu_count())
@@ -39,7 +41,10 @@ while True:
 	print("Maksymalne możliwe taktowanie procesora: " + cpustatsmax + " mhz")
 	cpustatsmin = str(psutil.cpu_freq().min)
 	print("Najniższe możliwe taktowanie procesora: " + cpustatsmin + " mhz")
-	swapbo = (psutil.swap_memory().total)
+	swapbo = psutil.swap_memory().total
 	swap = str(round(swapbo/1048576))
-	print("\033[1;31;40mIlośc pamięci swap: " + swap + " mb")
+	print("\033[1;31;40mIlośc pamięci swap: " + swap + "MB")
+	swapf = psutil.swap_memory().free
+	swapff = str(round(swapf/1048576))
+	print("Ilość wolnego swapu: " + swapff + "MB")
 	time.sleep(1)
